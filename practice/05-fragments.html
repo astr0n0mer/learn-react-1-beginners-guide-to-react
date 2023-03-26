@@ -1,0 +1,36 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById("root");
+
+    // Using React APIs
+    const helloElement = React.createElement("span", null, "Hello");
+    const worldElement = React.createElement("span", null, "World");
+    let combinedElement = React.createElement(
+      React.Fragment,
+      null,
+      helloElement,
+      " ",
+      worldElement
+    );
+
+    // Using JSX
+    combinedElement = (
+      <React.Fragment>
+        <span>Hello</span> <span>World</span>
+      </React.Fragment>
+    );
+
+    // Using shorter JSX
+    combinedElement = (
+      <>
+        <span>Hello</span> <span>World</span>
+      </>
+    );
+
+    ReactDOM.render(combinedElement, rootElement);
+  </script>
+</body>
